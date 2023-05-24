@@ -42,7 +42,7 @@ public class Carro {
 		}
 		Carro carro = new Carro();
 		carro.cadastrarCarro();
-		carros.add(carro);
+		this.carros.add(carro);
 
 		JOptionPane.showMessageDialog(null, "Carro cadastrado com sucesso!");
 	}
@@ -76,8 +76,8 @@ public class Carro {
 			}
 		} while (true);
 		List<Carro> carrosPorPeriodo = new ArrayList<Carro>();
-		for (Carro carro : carros) {
-			if (ano >= anoInicial && ano <= anoFinal) {
+		for (Carro carro : this.carros) {
+			if (this.ano >= anoInicial && this.ano <= anoFinal) {
 				carrosPorPeriodo.add(carro);
 			}
 		}
@@ -96,7 +96,7 @@ public class Carro {
 		} while (marca.isEmpty());
 
 		List<Carro> carrosPorMarca = new ArrayList<Carro>();
-		for (Carro carro : carros) {
+		for (Carro carro : this.carros) {
 			if (marca.equalsIgnoreCase(marca)) {
 				carrosPorMarca.add(carro);
 			}
@@ -114,7 +114,7 @@ public class Carro {
 		}
 
 		List<Carro> carrosPorCor = new ArrayList<Carro>();
-		for (Carro carro : carros) {
+		for (Carro carro : this.carros) {
 			if (true) {
 				carrosPorCor.add(carro);
 			}
