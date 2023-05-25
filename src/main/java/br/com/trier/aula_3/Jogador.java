@@ -8,22 +8,22 @@ import lombok.Getter;
 public class Jogador {
 
 	private static String nome;
-	private static int numeroCamisa;
-	private static int qtGols;
+	private static int nCamisa;
+	private static int gols;
 
 	static void cadastraJogador() {
 		nome = JOptionPane.showInputDialog("Informe o nome do jogador");
-		numeroCamisa = Integer.parseInt(JOptionPane.showInputDialog("Informe o número da camisa"));
-		qtGols = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de gols"));
+		nCamisa = Integer.parseInt(JOptionPane.showInputDialog("Informe o número da camisa"));
+		gols = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de gols"));
 	}
 
-	static void maisUmJogador() {
-		String menu = "Deseja cadastrar outro jogador?";
-		if (JOptionPane.showConfirmDialog(null, menu, null, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-			cadastraJogador();
-		} else {
-			Util.escolheOp();
-		}
+	@Override
+	public String toString() {
+		return "Nome: " + nome + "\nCamisa: " + nCamisa + "\nGols: " + gols + "\n";
 	}
 
-}//quando clica em cadastrar outro ele cadastra 2 de uma vez
+	public static int getGols() {
+		return 0;
+	}
+
+}

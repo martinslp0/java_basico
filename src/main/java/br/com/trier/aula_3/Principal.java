@@ -8,20 +8,30 @@ import javax.swing.JOptionPane;
 public class Principal {
 
 	public static void main(String[] args) {
-		List<TimeFutebol> time = new ArrayList<TimeFutebol>();
+		List<TimeFutebol> times = new ArrayList<TimeFutebol>();
 
 		int op = 0;
+		do {
+			op = Util.escolheOp();
+			switch (op) {
+			case 1:
+				Util.cadastraTime(times);
+				break;
+			case 2:
+				JOptionPane.showMessageDialog(null, Util.listaJogadoresTime(times));
+				break;
+			case 3:
+				JOptionPane.showMessageDialog(null, Util.artilheiroCampeonato(times));
+				break;
+			case 4:
+				JOptionPane.showMessageDialog(null, Util.timeMaisGols(times));
+				break;
+			case 5:
+				JOptionPane.showMessageDialog(null, "Encerrando programa.");
+				break;
+			}
 
-		op = Util.escolheOp();
-		if (op == 1) {
-			TimeFutebol t = new TimeFutebol();
-			t.cadastraTime();
-			time.add(t);
-		}
-		if (op == 2) {
-			JOptionPane.showMessageDialog(null, "Nesse time tem os jogadores:\n\n" + Util.getJogadores());
-		}
-		// 2 não ta funcionando
+		} while (op != 5);
 
 	}
 
