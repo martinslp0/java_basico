@@ -13,7 +13,7 @@ public class TimeFutebol {
 		do {
 		    Jogador.cadastraJogador();
 		    Jogador.maisUmJogador();
-		}while(false);
+		}while(true);
 		Jogador j = new Jogador();
 		Util.addJogador(j);
 	}
