@@ -19,14 +19,20 @@ public class Principal {
 				Util.cadastraAutores(autor);
 				break;
 			case 2:
-				Util.cadastraLivro(livros);
+				Util.cadastraLivro(livros, autor);
 				break;
 			case 3:
-				
+				 JOptionPane.showMessageDialog(null, Util.listaLivros(livros));
 				break;
 			case 4:
-				
+				JOptionPane.showMessageDialog(null, Util.pesquisaPorAutor(autor, livros));
 				break;
+			case 5:
+				JOptionPane.showMessageDialog(null, Util.faixaPreco(livros));
+			case 6:
+				JOptionPane.showMessageDialog(null, Util.autorCrianca(livros));
+			case 7:
+				JOptionPane.showMessageDialog(null, Util.autorFeminino(livros));
 			}
 		} while (op != 8);
 	}

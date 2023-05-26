@@ -19,7 +19,8 @@ public class Autores {
 	
 	@Override
 	public String toString() {
-		return nome + " - " +  sexo + " - " + idade + "\n";
+		return " "+ this.nome + "\nSexo: " + this.sexo + "\n Idade: " + this.idade + "\n";
 	}
+
 
 }
