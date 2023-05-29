@@ -6,7 +6,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Getter
 public class Util {
 
@@ -31,14 +33,14 @@ public class Util {
 				adicionarAutores = false;
 			}
 		}
-
 		livros.add(livro);
 	}
 
-	public static void cadastraAutores(List<Autores> autor) {
+	public static void cadastraAutores(List<Autores> autores) {
 		Autores a = new Autores();
 		a.cadastra();
-		autor.add(a);
+		autores.add(a);
+
 	}
 
 	public static Autores escolheAutor(List<Autores> autor) {
@@ -74,7 +76,6 @@ public class Util {
 	}
 
 	public static String faixaPreco(List<Livro> livros) {
-		Livro.valor(livros);
 		double precoMin = Double.parseDouble(JOptionPane.showInputDialog("Qual o preço mínimo?"));
 		double precoMax = Double.parseDouble(JOptionPane.showInputDialog("Qual o preço máximo?"));
 		StringBuilder resultado = new StringBuilder("Livros na faixa de preço de R$").append(precoMin).append(" a R$")
@@ -100,20 +101,27 @@ public class Util {
 		return ret.toString();
 	}
 
-	public static String autorFeminino(List<Livro> livros) {
-		StringBuilder ret = new StringBuilder("Livros com autores mulheres:\n");
-		for (Livro livro : livros) {
-			for (Autores autor : livro.getAutores()) {
-				if (Livro.isAutorFeminino(autor) == true) {
-					ret.append(livro.toString()).append("\n");
-				}else if(Livro.isAutorFeminino(autor) == false) {
-					StringBuilder ret1 = new StringBuilder("Livros com autores homens:\n");
-					ret.append(livro.toString()).append("\n");
-				}
+	public static String pesquisarPorSexo(List<Autores> autor, List<Livro> livros) {
 
+		Sexo sexo = Sexo.escolherSexo();
+		ArrayList<Livro> livroPorSexo = new ArrayList<Livro>();
+
+		for (Livro livro : livros) {
+			if (Livro.isAutorSexo(sexo)) {
+				livroPorSexo.add(livro);
 			}
 		}
-		return ret.toString();
+
+		if (!livroPorSexo.isEmpty()) {
+			StringBuilder ret = new StringBuilder();
+			for (Livro livro : livroPorSexo) {
+				ret.append(livro).append("\n");
+			}
+			return ret.toString();
+		} else {
+			return "Nenhum livro encontrado para o sexo informado.";
+		}
 	}
 
 }
+
