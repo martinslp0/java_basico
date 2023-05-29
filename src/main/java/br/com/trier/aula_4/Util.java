@@ -100,7 +100,7 @@ public class Util {
 		}
 		return ret.toString();
 	}
-
+//	public list<Livro> (final String, final String)
 	public static String pesquisarPorSexo(List<Autores> autor, List<Livro> livros) {
 
 		Sexo sexo = Sexo.escolherSexo();

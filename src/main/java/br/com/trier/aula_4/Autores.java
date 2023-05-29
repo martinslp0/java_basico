@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class Autores {
-
+// habilitar o enum
 	private String nome;
 	private String sexo;
 	private int idade;
