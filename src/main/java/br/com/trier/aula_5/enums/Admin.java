@@ -1,4 +1,4 @@
-package br.com.trier.aula_5;
+package br.com.trier.aula_5.enums;
 
 public enum Admin {
 
