@@ -6,7 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import br.com.trier.aula_5.utils.Util;
-import br.com.trier.aula_5.models.*;
+import br.com.trier.aula_5.models.Medicamento;
+import br.com.trier.aula_5.models.Pessoa;
 
 public class UtilTeste {
 

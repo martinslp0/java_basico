@@ -15,7 +15,7 @@ public class Pessoa {
 	@NonNull
 	private String sintoma;
 	private List<String> contraIndicacoesP = new ArrayList<String>();
-	private List<Medicamento> remedios = new ArrayList<Medicamento>();
+	private List<Medicamento> remedios;
 
 	public void addContraIndicacao(String contraIndicacao) {
 		this.contraIndicacoesP.add(contraIndicacao);
