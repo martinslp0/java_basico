@@ -1,4 +1,4 @@
-package br.com.trier.banco;
+package banco;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

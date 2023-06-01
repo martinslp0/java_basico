@@ -1,10 +1,11 @@
-package br.com.trier.banco;
+package banco;
 
 import lombok.Getter;
 
 @Getter
 public class ContaUniv extends Conta {
 
+	private int limiteMax = 2000;
 
 	public ContaUniv(String nome, int numero, int agencia, double saldo) {
 		super(nome, numero, agencia, saldo);
@@ -12,7 +13,7 @@ public class ContaUniv extends Conta {
 
 	@Override
 	public boolean deposito(double valorDeposito) {
-		if (2000 >= valorDeposito + getSaldo()) {
+		if (getLimiteMax() >= valorDeposito + getSaldo()) {
 			return super.deposito(valorDeposito);
 		}
 		return false;

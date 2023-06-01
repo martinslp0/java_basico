@@ -1,4 +1,4 @@
-package br.com.trier.banco;
+package banco;
 
 import java.util.ArrayList;
 import java.util.List;
