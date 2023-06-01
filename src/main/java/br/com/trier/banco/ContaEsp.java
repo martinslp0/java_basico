@@ -19,7 +19,7 @@ public class ContaEsp extends Conta {
 	}
 
 	@Override
-	public boolean transferencia(String contaOrigem, String contaDestino, double valorTransf) {
+	public boolean transferencia(Conta contaOrigem, Conta contaDestino, double valorTransf) {
 		if (saque(valorTransf) == true) {
 			deposito(valorTransf);
 			return true;

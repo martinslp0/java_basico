@@ -2,6 +2,17 @@ package br.com.trier.banco;
 
 public class Caixa {
 	
-	
+	public boolean opSaque(Conta conta, double valorSaque) {
+		return conta.saque(valorSaque);
+	}
+	public boolean opDeposito(Conta conta, double valorDeposito) {
+		return conta.deposito(valorDeposito);
+	}
+	public boolean opTransferencia(Conta contaOrigem, Conta contaDestino, double valorTransf) {
+		return contaOrigem.transferencia(contaOrigem, contaDestino, valorTransf);
+	}
+	public double verificarSaldo(Conta conta) {
+		return conta.getSaldo();
+	}
 
 }

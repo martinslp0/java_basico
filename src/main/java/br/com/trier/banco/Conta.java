@@ -12,6 +12,10 @@ public class Conta {
 	private int agencia;
 	protected double saldo;
 
+	public double verificarSaldo(Conta conta) {
+		return saldo;
+	}
+	
 	public boolean saque(double valorSaque) {
 		if (saldo >= valorSaque) {
 			saldo = saldo - valorSaque;
@@ -25,7 +29,7 @@ public class Conta {
 		return true;
 	}
 
-	public boolean transferencia(String contaOrigem, String contaDestino, double valorTransf) {
+	public boolean transferencia(Conta contaOrigem, Conta contaDestino, double valorTransf) {
 		if (saque(valorTransf) == true) {
 			deposito(valorTransf);
 			return true;
